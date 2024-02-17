@@ -7,19 +7,19 @@ import java.sql.Timestamp;
 public class CadastrarBeneficiarioDTO {
 
     @JsonIgnore
-    private Long compraId;
+    private Long id;
     private String nome;
     private Long telefone;
     private String dataNascimento;
     private Timestamp dataInclusao;
     private Timestamp dataAtualizacao;
 
-    public Long getCompraId() {
-        return compraId;
+    public Long getId() {
+        return id;
     }
 
-    public void setCompraId(Long compraId) {
-        this.compraId = compraId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNome() {

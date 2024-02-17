@@ -1,6 +1,5 @@
 package com.example.demo.controller;
 
-import com.example.demo.model.Beneficiario;
 import com.example.demo.model.dto.CadastrarBeneficiarioDTO;
 import com.example.demo.model.dto.CadastrarDocumentoDTO;
 import com.example.demo.model.dto.CadastroBeneficiarioDocumentoDTO;
@@ -10,11 +9,14 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/cadastrar-beneficiario")
-public class BeneficiarioController {
+@RequestMapping("/atualizar-documento-beneficiario")
+public class AtualizarDadosCadastraisController {
 
     @Autowired
     private CadastrarBeneficiarioService cadastrarBeneficiarioService;
@@ -23,19 +25,6 @@ public class BeneficiarioController {
     private CadastrarDocumentoService cadastrarDocumentoService;
 
     @ApiOperation(value = "Retorna o beneficiario pelo id")
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "Retorna o pedido"),
-            @ApiResponse(code = 403, message = "Você não tem permissão para acessar este recurso"),
-            @ApiResponse(code = 500, message = "Foi gerada uma exceção"),
-    })
-
-    @RequestMapping(value = "/{id}",method = RequestMethod.GET, produces="application/json")
-    public Beneficiario findBeneficiario(@PathVariable("id") Long id){
-        return cadastrarBeneficiarioService.getByid(id);
-
-    }
-
-    @ApiOperation(value = "Realiza um cadastro de beneficiario" )
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Retorna o pedido"),
             @ApiResponse(code = 403, message = "Você não tem permissão para acessar este recurso"),
@@ -54,9 +43,8 @@ public class BeneficiarioController {
         cadastrarDocumentoDTO.setTipoDocumento(cadastroBeneficiarioDocumentoDTO.getTipoDocumento());
         cadastrarDocumentoDTO.setDescricao(cadastroBeneficiarioDocumentoDTO.getDescricao());
 
-        cadastrarBeneficiarioService.cadastrarBeneficiario(cadastrarBeneficiarioDTO);
-        cadastrarDocumentoService.cadastrarDocumento(cadastrarDocumentoDTO);
+        cadastrarBeneficiarioService.atualizarBeneficiario(cadastrarBeneficiarioDTO);
+        cadastrarDocumentoService.atualizarDocumento(cadastrarDocumentoDTO);
         return cadastroBeneficiarioDocumentoDTO;
     }
-
 }
