@@ -5,6 +5,7 @@ import com.example.demo.model.dto.CadastrarDocumentoDTO;
 import com.example.demo.model.dto.CadastroBeneficiarioDocumentoDTO;
 import com.example.demo.repository.service.CadastrarBeneficiarioService;
 import com.example.demo.repository.service.CadastrarDocumentoService;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/atualizar-documento-beneficiario")
+@Api(value = "Atualizar Documento Beneficiario", tags = "Atualizar Documento Beneficiario")
 public class AtualizarDadosCadastraisController {
 
     @Autowired
@@ -31,7 +33,7 @@ public class AtualizarDadosCadastraisController {
             @ApiResponse(code = 500, message = "Foi gerada uma exceção"),
     })
     @RequestMapping(method = RequestMethod.POST, produces="application/json", consumes="application/json")
-    public CadastroBeneficiarioDocumentoDTO realizaCompra(@RequestBody CadastroBeneficiarioDocumentoDTO cadastroBeneficiarioDocumentoDTO) {
+    public CadastroBeneficiarioDocumentoDTO atualizarBeneficiarioDocumento(@RequestBody CadastroBeneficiarioDocumentoDTO cadastroBeneficiarioDocumentoDTO) {
         //Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
         CadastrarBeneficiarioDTO cadastrarBeneficiarioDTO = new CadastrarBeneficiarioDTO();

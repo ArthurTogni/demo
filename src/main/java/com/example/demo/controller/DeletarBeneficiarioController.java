@@ -2,11 +2,9 @@ package com.example.demo.controller;
 
 import com.example.demo.model.Beneficiario;
 import com.example.demo.model.Documento;
-import com.example.demo.model.dto.CadastrarBeneficiarioDTO;
-import com.example.demo.model.dto.CadastrarDocumentoDTO;
-import com.example.demo.model.dto.CadastroBeneficiarioDocumentoDTO;
 import com.example.demo.repository.service.CadastrarBeneficiarioService;
 import com.example.demo.repository.service.CadastrarDocumentoService;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
@@ -17,7 +15,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/atualizar-documento-beneficiario")
+@RequestMapping("/excluir-beneficiario")
+@Api(value = "Excluir Beneficiario", tags = "Excluir Beneficiario")
 public class DeletarBeneficiarioController {
 
     @Autowired
@@ -35,7 +34,7 @@ public class DeletarBeneficiarioController {
     })
 
     @RequestMapping(method = RequestMethod.POST, produces="application/json", consumes="application/json")
-    public String realizaCompra(@RequestBody Long id) {
+    public String excluirBeneficiarioDocumento(@RequestBody Long id) {
         //Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
         Beneficiario beneficiario = new Beneficiario();

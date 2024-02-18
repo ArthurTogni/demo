@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.model.Beneficiario;
 import com.example.demo.model.Documento;
 import com.example.demo.repository.service.CadastrarDocumentoService;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
@@ -15,6 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/buscar-documento-beneficiario")
+@Api(value = "Buscar Documento Beneficiario", tags = "Buscar Documento Beneficiario")
 public class BuscarDocumentoBeneficiario {
 
     @Autowired
