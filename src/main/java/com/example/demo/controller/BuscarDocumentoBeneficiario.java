@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/buscar-documento-beneficiario")
+@RequestMapping("/api/buscar-documento-beneficiario")
 @Api(value = "Buscar Documento Beneficiario", tags = "Buscar Documento Beneficiario")
 public class BuscarDocumentoBeneficiario {
 

@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/buscar-beneficiario")
+@RequestMapping("/api/buscar-beneficiario")
 @Api(value = "Buscar Beneficiario", tags = "Buscar Beneficiario")
 public class BuscarBeneficiarioController {
 

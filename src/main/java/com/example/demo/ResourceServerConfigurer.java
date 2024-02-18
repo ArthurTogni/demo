@@ -11,8 +11,8 @@
 //    @Override
 //    public void configure(HttpSecurity http) throws Exception {
 //        http.authorizeRequests()
-//                //.antMatchers(HttpMethod.POST, "/compra")
-//                //.hasRole("USER")
+//                .antMatchers(HttpMethod.POST, "/api")
+//                .hasRole("ADMIN")
 //        ;
 //    }
 //

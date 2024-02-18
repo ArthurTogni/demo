@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/atualizar-documento-beneficiario")
+@RequestMapping("/api/atualizar-documento-beneficiario")
 @Api(value = "Atualizar Documento Beneficiario", tags = "Atualizar Documento Beneficiario")
 public class AtualizarDadosCadastraisController {
 

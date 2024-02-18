@@ -25,6 +25,7 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
                 .build()
                 .apiInfo(apiInfo());
     }
+
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("API Documentation")
@@ -33,9 +34,8 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
                 .build();
     }
 
-
     @Override
-    protected void addResourceHandlers(ResourceHandlerRegistry registry){
+    protected void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("swagger-ui.html")
                 .addResourceLocations("classpath:/META-INF/resources/");
 

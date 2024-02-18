@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/excluir-beneficiario")
+@RequestMapping("/api/excluir-beneficiario")
 @Api(value = "Excluir Beneficiario", tags = "Excluir Beneficiario")
 public class DeletarBeneficiarioController {
 
