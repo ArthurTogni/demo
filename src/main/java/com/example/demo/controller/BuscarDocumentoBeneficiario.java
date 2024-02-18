@@ -28,8 +28,9 @@ public class BuscarDocumentoBeneficiario {
             @ApiResponse(code = 403, message = "Você não tem permissão para acessar este recurso"),
             @ApiResponse(code = 500, message = "Foi gerada uma exceção"),
     })
-    @RequestMapping(method = RequestMethod.POST, produces="application/json", consumes="application/json")
+    @RequestMapping(method = RequestMethod.GET, produces = "application/json")
     public Documento findAllBeneficiarios(Long id){
+        id =  id+1;
         return cadastrarDocumentoService.getById(id);
     }
 

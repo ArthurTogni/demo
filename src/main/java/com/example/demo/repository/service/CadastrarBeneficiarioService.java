@@ -45,6 +45,7 @@ public class CadastrarBeneficiarioService{
         long currentTimestampMillis = Instant.now().toEpochMilli();
         Timestamp timeNow = new Timestamp(currentTimestampMillis);
         Beneficiario beneficiario = new Beneficiario();
+        beneficiario.setId(cadastrarBeneficiarioDTO.getId());
         beneficiario.setNome(cadastrarBeneficiarioDTO.getNome());
         beneficiario.setTelefone(cadastrarBeneficiarioDTO.getTelefone());
         beneficiario.setDataNascimento(cadastrarBeneficiarioDTO.getDataNascimento());

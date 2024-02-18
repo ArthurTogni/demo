@@ -32,10 +32,12 @@ public class CadastrarDocumentoService {
         return documento;
     }
     public Documento atualizarDocumento(CadastrarDocumentoDTO cadastrarDocumentoDTO){
+        Long idDoc = cadastrarDocumentoDTO.getId()+1;
 
         long currentTimestampMillis = Instant.now().toEpochMilli();
         Timestamp timeNow = new Timestamp(currentTimestampMillis);
         Documento documento = new Documento();
+        documento.setId(idDoc);
         documento.setTipoDocumento(cadastrarDocumentoDTO.getTipoDocumento());
         documento.setDescricao(cadastrarDocumentoDTO.getDescricao());
         documento.setDataAtualizacao(timeNow);

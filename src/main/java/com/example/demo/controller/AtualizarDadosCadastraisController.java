@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.model.dto.AtualizarBeneficiarioDocumentoDTO;
 import com.example.demo.model.dto.CadastrarBeneficiarioDTO;
 import com.example.demo.model.dto.CadastrarDocumentoDTO;
 import com.example.demo.model.dto.CadastroBeneficiarioDocumentoDTO;
@@ -33,20 +34,22 @@ public class AtualizarDadosCadastraisController {
             @ApiResponse(code = 500, message = "Foi gerada uma exceção"),
     })
     @RequestMapping(method = RequestMethod.POST, produces="application/json", consumes="application/json")
-    public CadastroBeneficiarioDocumentoDTO atualizarBeneficiarioDocumento(@RequestBody CadastroBeneficiarioDocumentoDTO cadastroBeneficiarioDocumentoDTO) {
+    public AtualizarBeneficiarioDocumentoDTO atualizarBeneficiarioDocumento(@RequestBody AtualizarBeneficiarioDocumentoDTO atualizarBeneficiarioDocumentoDTO) {
         //Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
         CadastrarBeneficiarioDTO cadastrarBeneficiarioDTO = new CadastrarBeneficiarioDTO();
         CadastrarDocumentoDTO cadastrarDocumentoDTO = new CadastrarDocumentoDTO();
 
-        cadastrarBeneficiarioDTO.setNome(cadastroBeneficiarioDocumentoDTO.getNome());
-        cadastrarBeneficiarioDTO.setTelefone(cadastroBeneficiarioDocumentoDTO.getTelefone());
+        cadastrarBeneficiarioDTO.setId(atualizarBeneficiarioDocumentoDTO.getId());
+        cadastrarBeneficiarioDTO.setNome(atualizarBeneficiarioDocumentoDTO.getNome());
+        cadastrarBeneficiarioDTO.setTelefone(atualizarBeneficiarioDocumentoDTO.getTelefone());
 
-        cadastrarDocumentoDTO.setTipoDocumento(cadastroBeneficiarioDocumentoDTO.getTipoDocumento());
-        cadastrarDocumentoDTO.setDescricao(cadastroBeneficiarioDocumentoDTO.getDescricao());
+        cadastrarDocumentoDTO.setId(atualizarBeneficiarioDocumentoDTO.getId());
+        cadastrarDocumentoDTO.setTipoDocumento(atualizarBeneficiarioDocumentoDTO.getTipoDocumento());
+        cadastrarDocumentoDTO.setDescricao(atualizarBeneficiarioDocumentoDTO.getDescricao());
 
         cadastrarBeneficiarioService.atualizarBeneficiario(cadastrarBeneficiarioDTO);
         cadastrarDocumentoService.atualizarDocumento(cadastrarDocumentoDTO);
-        return cadastroBeneficiarioDocumentoDTO;
+        return atualizarBeneficiarioDocumentoDTO;
     }
 }
