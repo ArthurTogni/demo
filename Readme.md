@@ -2,6 +2,8 @@ projeto está utilizando o jdk 1.17
 
 comando maven: mvn clean install
 
+startar o server a partir da classe DemoApplication.java
+
 para solicitar o bearer token é necessario utilizar o postman
 url token: localhost:8080/oauth/token
 no authorization utilizar o Basic Auth
